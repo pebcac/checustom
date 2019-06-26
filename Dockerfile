@@ -7,3 +7,4 @@ RUN echo $'[centos]\nname=CentOS-7\nbaseurl=http://distro.ibiblio.org/centos/7.6
 RUN yum install -y zsh
 RUN yum update -y && yum -y autoremove && yum clean all
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh2 || true
