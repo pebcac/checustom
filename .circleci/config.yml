@@ -2,7 +2,7 @@
     executors:
       docker-publisher:
         environment:
-          IMAGE_NAME: building-on-ci
+          IMAGE_NAME: pdred/building-on-ci
         docker:
           - image: circleci/buildpack-deps:stretch
     jobs:
@@ -17,7 +17,7 @@
                 docker build -t quay.io/$IMAGE_NAME:latest .
           - run:
               name: Archive Docker image
-              command: docker save -o image.tar $IMAGE_NAME
+              command: docker save -o image.tar quay.io/$IMAGE_NAME
           - persist_to_workspace:
               root: .
               paths:
