@@ -22,7 +22,7 @@ jobs:
       - run:
         name: Publish Docker Image to Quay
         command: |
-          echo "$DOCKERHUB_PASS" | docker login quay.io -u "$DOCKERHUB_USERNAME" --password-stdin
+          echo "$DOCKERHUB_PASS" | docker login quay.io -u "$DOCKERHUB_USERNAME" -p "$DOCKERHUB_PASS"
           docker push $IMAGE_NAME:latest
       - run:
           name: Archive Docker image
