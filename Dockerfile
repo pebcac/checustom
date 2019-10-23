@@ -4,7 +4,6 @@ USER root
 RUN curl -LO https://github.com/openshift/origin/releases/download/v3.11.0/openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz && tar xvf openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit.tar.gz
 RUN mv openshift-origin-client-tools-v3.11.0-0cbc58b-linux-64bit/oc /usr/local/bin/oc && chmod +x /usr/local/bin/oc
 RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/local/bin/odo && chmod +x /usr/local/bin/odo
-# RUN echo $'[centos]\nname=CentOS-7\nbaseurl=http://distro.ibiblio.org/centos/7.6.1810/os/x86_64/\nenabled=1 \ngpgcheck=0'>> /etc/yum.repos.d/centos.repo
 RUN curl -LO https://get.helm.sh/helm-v2.15.1-linux-amd64.tar.gz && tar xvf helm-v2.15.1-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm && chmod +x /usr/local/bin/helm
 RUN mv linux-amd64/tiller /usr/local/bin/tiller && chmod +x /usr/local/bin/tiller
