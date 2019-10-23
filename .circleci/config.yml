@@ -35,7 +35,7 @@
               name: Publish Docker Image to Quay
               command: |
                 echo "$DOCKERHUB_PASS" | docker login quay.io -u "$DOCKERHUB_USERNAME" --password-stdin
-                docker push quay.io/$IMAGE_NAME:latest
+                docker push quay.io/pdred/building-on-ci:latest
     workflows:
       version: 2
       build-master:
