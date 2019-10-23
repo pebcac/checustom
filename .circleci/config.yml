@@ -33,3 +33,6 @@ workflows:
         filters:
           branches:
             only: master
+    - publish-latest:
+        requires:
+          - build
