@@ -4,7 +4,7 @@ executors:
     environment:
       IMAGE_NAME: building-on-ci
     docker:
-      - image: clircleci/buildpack-deps:stretch 
+      - image: circleci/buildpack-deps:stretch 
 jobs:
   build:
     executor: docker-publisher
@@ -24,6 +24,9 @@ jobs:
         command: |
           echo "$DOCKERHUB_PASS" | docker login quay.io -u "$DOCKERHUB_USERNAME" --password-stdin
           docker push $IMAGE_NAME:latest
+      - run:
+          name: Archive Docker image
+          command: docker save -o image.tar $IMAGE_NAME
 workflows:
   version: 2
   build-master:
