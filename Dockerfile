@@ -19,6 +19,6 @@ WORKDIR $HOME
 # Install oh-my-zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 # set the zsh theme
-ENV ZSH_THEME=agnoster
+ENV ZSH_THEME=robbyrussell
 # set default terminal to zsh
 CMD ["zsh"]
