@@ -8,13 +8,10 @@ RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-
 RUN curl -LO https://get.helm.sh/helm-v2.15.1-linux-amd64.tar.gz && tar xvf helm-v2.15.1-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm && chmod +x /usr/local/bin/helm
 RUN mv linux-amd64/tiller /usr/local/bin/tiller && chmod +x /usr/local/bin/tiller
-<<<<<<< HEAD
 RUN yum install -y zsh podman podman-docker git wget
-# RUN yum update -y && yum -y autoremove && yum clean all
-=======
+RUN yum update -y && yum -y autoremove && yum clean all
 RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts 
 RUN yum update -y && yum -y autoremove && yum clean all
->>>>>>> 096985a20b61cf601bb469b867bfa52b5e6a6eb0
 # terminal colors with xterm
 ENV TERM xterm
 # user home dir
