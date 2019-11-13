@@ -9,7 +9,7 @@ RUN curl -LO https://get.helm.sh/helm-v2.15.1-linux-amd64.tar.gz && tar xvf helm
 RUN mv linux-amd64/helm /usr/local/bin/helm && chmod +x /usr/local/bin/helm
 RUN mv linux-amd64/tiller /usr/local/bin/tiller && chmod +x /usr/local/bin/tiller
 RUN yum install -y zsh podman podman-docker git wget
-RUN yum update -y && yum -y autoremove && yum clean all
+# RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
 # user home dir
