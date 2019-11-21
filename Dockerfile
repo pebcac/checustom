@@ -6,7 +6,7 @@ USER root
 RUN curl -LO https://github.com/openshift/origin/archive/v4.1.0.tar.gz && tar xvf v4.1.0.tar.gz
 RUN mv v4.1.0.tar.gz/oc /usr/local/bin/oc && chmod +x /usr/local/bin/oc
 RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/local/bin/odo && chmod +x /usr/local/bin/odo
-RUN curl -LO https://get.helm.sh/helm-v2.15.1-linux-amd64.tar.gz && tar xvf helm-v2.15.1-linux-amd64.tar.gz
+RUN curl -LO https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz && tar xvf helm-v3.0.0-linux-amd64.tar.gz
 RUN mv linux-amd64/helm /usr/local/bin/helm && chmod +x /usr/local/bin/helm
 RUN mv linux-amd64/tiller /usr/local/bin/tiller && chmod +x /usr/local/bin/tiller
 RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts
