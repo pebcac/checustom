@@ -1,9 +1,9 @@
 # FROM registry.access.redhat.com/codeready-workspaces/stacks-java:latest
-FROM quay.io/fedora/fedora:31-x86_64
+FROM fedora
 MAINTAINER Preston Davis (pdavis@redhat.com)
 USER root
 RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/local/bin/odo && chmod +x /usr/local/bin/odo
-RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts
+RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts vim-enhanced
 RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
