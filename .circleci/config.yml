@@ -14,7 +14,6 @@
           - run:
               name: Build Docker image
               command: |
-                echo "$DOCKERHUB_PASS" | docker login quay.io -u "$DOCKERHUB_USERNAME" --password-stdin      
                 docker build -t quay.io/$IMAGE_NAME:latest .
           - run:
               name: Archive Docker image
