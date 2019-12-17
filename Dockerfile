@@ -1,5 +1,5 @@
 # FROM registry.access.redhat.com/codeready-workspaces/stacks-java:latest
-FROM centos:latest
+FROM ubi7:latest
 MAINTAINER Preston Davis (pdavis@redhat.com)
 USER root
 RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/local/bin/odo && chmod +x /usr/local/bin/odo
