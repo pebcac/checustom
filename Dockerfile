@@ -3,7 +3,7 @@ FROM fedora
 MAINTAINER Preston Davis (pdavis@redhat.com)
 USER root
 RUN curl -L https://github.com/openshift/odo/releases/latest/download/odo-linux-amd64 -o /usr/local/bin/odo && chmod +x /usr/local/bin/odo
-RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts vim-enhanced
+RUN yum install -y zsh podman podman-docker git wget fontawesome-fonts vim-enhanced lsof htop net-tools
 RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
