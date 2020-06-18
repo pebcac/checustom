@@ -11,6 +11,10 @@ ENV TERM xterm
 ENV HOME=/root
 # set working directory
 WORKDIR $HOME
+# Add aquasec microscanner run
+ADD https://get.aquasec.com/microscanner .
+RUN chmod +x microscanner
+RUN ./microscanner M2IyOTc2M2M4ZGIy [--continue-on-failuer]
 # Install oh-my-zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 # set the zsh theme
