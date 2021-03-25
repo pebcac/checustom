@@ -1,7 +1,7 @@
 FROM fedora:latest
 LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
-RUN yum install -y zsh nfs-utils podman podman-docker git maven java-1.8.0-openjdk wget golang fontawesome-fonts vim-enhanced lsof htop net-tools
+RUN yum install -y zsh nfs-utils podman podman-docker git maven java-1.8.0-openjdk wget golang jq vim-enhanced lsof htop net-tools
 RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
