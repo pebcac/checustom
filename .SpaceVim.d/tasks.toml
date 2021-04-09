@@ -1,0 +1,4 @@
+# Slim down image size
+* Remove unnecesarry rpms
+* Remove unused applications
+* Investigate smaller base package
