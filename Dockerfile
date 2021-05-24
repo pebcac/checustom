@@ -14,9 +14,9 @@ RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/
 # Install SpaceVIM
 RUN curl -sLf https://spacevim.org/install.sh | bash
 # Add aquasec microscanner run
-ADD https://get.aquasec.com/microscanner .
-RUN chmod +x microscanner
-RUN ./microscanner M2IyOTc2M2M4ZGIy # [--continue-on-failuer]
+#ADD https://get.aquasec.com/microscanner .
+#RUN chmod +x microscanner
+#RUN ./microscanner M2IyOTc2M2M4ZGIy # [--continue-on-failuer]
 # Make go working dir
 RUN mkdir -p /home/pdavis/workspace/go
 # Export GOPATH
