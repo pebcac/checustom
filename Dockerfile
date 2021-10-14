@@ -11,6 +11,8 @@ ENV HOME=/home/pdavis
 WORKDIR $HOME
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
+# Install SpaceVIM
+RUN curl -sLf https://spacevim.org/install.sh | bash
 # Make go working dir
 RUN mkdir -p /home/pdavis/workspace/go
 # Export GOPATH
