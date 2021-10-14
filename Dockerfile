@@ -11,10 +11,6 @@ ENV HOME=/home/pdavis
 WORKDIR $HOME
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
-# Add aquasec microscanner run
-ADD https://get.aquasec.com/microscanner .
-RUN chmod +x microscanner
-RUN ./microscanner M2IyOTc2M2M4ZGIy # [--continue-on-failuer]
 # Make go working dir
 RUN mkdir -p /home/pdavis/workspace/go
 # Export GOPATH
