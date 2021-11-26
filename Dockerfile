@@ -1,13 +1,17 @@
 FROM fedora:latest
 LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
-RUN yum install -y zsh nfs-utils podman podman-docker git maven java-1.8.0-openjdk wget golang fontawesome-fonts vim-enhanced lsof htop net-tools
-RUN yum update -y && yum -y autoremove && yum clean all
+RUN yum install -y zsh git maven java-1.8.0-openjdk wget golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
+# RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
 # user home dir
 ENV HOME=/home/pdavis
 # set working directory
+#
+# Install Meslo Nerdfont
+# ENV wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip && unzip Meslo.zip && cd Meslo && cp * ~/.local/share/fonts
+#
 WORKDIR $HOME
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
