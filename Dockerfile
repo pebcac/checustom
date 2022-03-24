@@ -1,7 +1,7 @@
 FROM fedora:latest
 LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
-RUN yum install -y zsh git wget golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
+RUN yum install -y zsh git wget exa golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
 # RUN yum update -y && yum -y autoremove && yum clean all
 # terminal colors with xterm
 ENV TERM xterm
