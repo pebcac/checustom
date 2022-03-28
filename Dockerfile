@@ -22,7 +22,6 @@ WORKDIR $HOME
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz && tar zxvf openshift-client-linux.tar.gz
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-install-linux.tar.gz && tar zxvf openshift-install-linux.tar.gz
 RUN mkdir ~/bin && mv oc kubectl ~/bin
-RUN export PATH=$PATH:~/bin
 
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
@@ -55,4 +54,4 @@ RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc
 RUN echo alias ls=\"exa --icons\" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
-CMD ["export PATH=$PATH:~/bin && zsh"]
+CMD ["zsh"]
