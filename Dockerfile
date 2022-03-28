@@ -3,7 +3,7 @@ LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
 
 # Install packages
-RUN yum install -y zsh git wget exa fontconfig tldr powerline-fonts binutils golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
+RUN yum install -y zsh git wget exa fontconfig tldr powerline-fonts golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
 # RUN yum update -y && yum -y autoremove && yum clean all
 
 # terminal colors with xterm
@@ -22,7 +22,7 @@ WORKDIR $HOME
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz && tar zxvf openshift-client-linux.tar.gz
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-install-linux.tar.gz && tar zxvf openshift-install-linux.tar.gz
 RUN mkdir ~/bin && mv oc kubectl ~/bin
-RUN echo PATH=$PATH:~/bin
+RUN export PATH=$PATH:~/bin
 
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
@@ -55,4 +55,4 @@ RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc
 RUN echo alias ls=\"exa --icons\" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
-CMD ["zsh"]
+CMD ["export PATH=$PATH:~/bin && zsh"]
