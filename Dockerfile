@@ -19,11 +19,8 @@ ENV HOME=/home/pdavis
 WORKDIR $HOME
 
 # Download and install the OpenShift OC client
-<<<<<<< HEAD
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz && tar zxvf openshift-client-linux.tar.gz
-=======
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-install-linux.tar.gz && tar zxvf openshift-install-linux.tar.gz
->>>>>>> openshift-client
 RUN mkdir ~/bin && mv oc kubectl ~/bin
 
 # Install cheat.sh
