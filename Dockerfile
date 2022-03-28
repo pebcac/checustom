@@ -22,6 +22,7 @@ WORKDIR $HOME
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-linux.tar.gz && tar zxvf openshift-client-linux.tar.gz
 RUN wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-install-linux.tar.gz && tar zxvf openshift-install-linux.tar.gz
 RUN mkdir ~/bin && mv oc kubectl ~/bin
+RUN echo PATH=$PATH:~/bin
 
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
