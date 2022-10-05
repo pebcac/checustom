@@ -23,7 +23,7 @@ RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/
 
 # Copy Hack font into container
 RUN rm -f /home/pdavis/.local/share/fonts/*
-COPY /src/complete/* /home/pdavis/.local/share/fonts/ 
+COPY /src/complete/* /home/pdavis/.local/share/fonts/
 
 # Refresh system font cache
 RUN fc-cache -f -v
@@ -44,8 +44,8 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 ENV ZSH_THEME=agnoster
 
 # Set ls aliases
-RUN echo alias ll=\"exa -l -g --icons\" >> /home/pdavis/.zshrc 
-RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc 
+RUN echo alias ll=\"exa -l -g --icons\" >> /home/pdavis/.zshrc
+RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc
 RUN echo alias ls=\"exa --icons\" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
