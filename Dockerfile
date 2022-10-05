@@ -3,7 +3,7 @@ LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
 
 # Install packages
-RUN yum install -y zsh git wget exa fontconfig tldr powerline-fonts golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
+RUN yum install -y zsh git wget exa fontconfig tldr golang vim-enhanced lsof htop net-tools && yum -y autoremove && yum clean all
 # RUN yum update -y && yum -y autoremove && yum clean all
 
 # terminal colors with xterm
@@ -21,15 +21,15 @@ WORKDIR $HOME
 # Install cheat.sh
 RUN mkdir -p ~/bin/ && curl https://cht.sh/:cht.sh > ~/bin/cht.sh && chmod +x ~/bin/cht.sh
 
-# Install SpaceVIM
-RUN curl -sLf https://spacevim.org/install.sh | bash
-
 # Copy Hack font into container
 RUN rm -f /home/pdavis/.local/share/fonts/*
-COPY /src/complete/* /home/pdavis/.local/share/fonts/ 
+COPY /src/complete/* /home/pdavis/.local/share/fonts/
 
 # Refresh system font cache
 RUN fc-cache -f -v
+
+# Install SpaceVIM
+RUN curl -sLf https://spacevim.org/install.sh | bash
 
 # Make go working dir
 RUN mkdir -p /home/pdavis/workspace/go
@@ -44,8 +44,8 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 ENV ZSH_THEME=agnoster
 
 # Set ls aliases
-RUN echo alias ll=\"exa -l -g --icons\" >> /home/pdavis/.zshrc 
-RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc 
+RUN echo alias ll=\"exa -l -g --icons\" >> /home/pdavis/.zshrc
+RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc
 RUN echo alias ls=\"exa --icons\" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
