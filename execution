@@ -1,3 +1,0 @@
-# To run the container:
-
-docker run -t -i --privileged fecustom zsh

@@ -44,9 +44,9 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 ENV ZSH_THEME=agnoster
 
 # Set ls aliases
-RUN echo alias ll=\"exa -l -g --icons\" >> /home/pdavis/.zshrc
-RUN echo alias lla=\"exa -l -a -g --icons\" >> /home/pdavis/.zshrc
-RUN echo alias ls=\"exa --icons\" >> /home/pdavis/.zshrc
+RUN echo alias ll="exa -l -g --icons\" >> /home/pdavis/.zshrc
+RUN echo alias lla="exa -l -a -g --icons\" >> /home/pdavis/.zshrc
+RUN echo alias ls="exa --icons\" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
 CMD ["zsh"]
