@@ -3,7 +3,7 @@ LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
 
 # Install packages
-RUN yum install -y zsh git wget ripgrep nodejs-nvm fontconfig tldr golang neovim lsof htop net-tools && yum -y autoremove && yum clean all
+RUN yum install -y zsh git wget ripgrep nodejs-npm fontconfig tldr golang neovim lsof htop net-tools && yum -y autoremove && yum clean all
 # RUN yum update -y && yum -y autoremove && yum clean all
 
 # terminal colors with xterm
