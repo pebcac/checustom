@@ -29,7 +29,7 @@ COPY /src/complete/* /home/pdavis/.local/share/fonts/
 RUN fc-cache -f -v
 
 # Install SpaceVIM
-RUN curl -sLf https://spacevim.org/install.sh | bash
+#RUN curl -sLf https://spacevim.org/install.sh | bash
 
 # Make go working dir
 RUN mkdir -p /home/pdavis/workspace/go
