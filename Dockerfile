@@ -1,20 +1,16 @@
-FROM fedora:latest
+FROM fedora:39
 LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
 
 # Install packages
-RUN yum install -y zsh git wget ripgrep nodejs-npm fontconfig tldr golang neovim lsof htop net-tools && yum -y autoremove && yum clean all
-# RUN yum update -y && yum -y autoremove && yum clean all
+RUN yum install -y zsh git wget ripgrep fd-find fontconfig tldr neovim lsof net-tools && yum -y autoremove && yum clean all
 
 # terminal colors with xterm
-ENV TERM xterm
+ENV TERM xterm256
 
 # user home dir
 ENV HOME=/home/pdavis
 # set working directory
-
-# Install Meslo Nerdfont
-# ENV wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip && unzip Meslo.zip && cd Meslo && cp * ~/.local/share/fonts
 
 WORKDIR $HOME
 
@@ -31,12 +27,6 @@ RUN fc-cache -f -v
 # Install SpaceVIM
 #RUN curl -sLf https://spacevim.org/install.sh | bash
 
-# Make go working dir
-RUN mkdir -p /home/pdavis/workspace/go
-
-# Export GOPATH
-ENV export GOPATH=/home/pdavis/workspace/go
-
 # Install oh-my-zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
@@ -44,9 +34,9 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 ENV ZSH_THEME=agnoster
 
 # Set ls aliases
-RUN echo alias ll="exa -l -g --icons\" >> /home/pdavis/.zshrc
-RUN echo alias lla="exa -l -a -g --icons\" >> /home/pdavis/.zshrc
-RUN echo alias ls="exa --icons\" >> /home/pdavis/.zshrc
+RUN echo alias ll="exa -l -g --icons" >> /home/pdavis/.zshrc
+RUN echo alias lla="exa -l -a -g --icons" >> /home/pdavis/.zshrc
+RUN echo alias ls="exa --icons" >> /home/pdavis/.zshrc
 
 # set default terminal to zsh
 CMD ["zsh"]
