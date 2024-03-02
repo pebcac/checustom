@@ -24,9 +24,6 @@ COPY /src/complete/* /home/pdavis/.local/share/fonts/
 # Refresh system font cache
 RUN fc-cache -f -v
 
-# Install SpaceVIM
-#RUN curl -sLf https://spacevim.org/install.sh | bash
-
 # Install oh-my-zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
