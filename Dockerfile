@@ -1,3 +1,4 @@
+## -*- dockerfile-image-name: "docker.io/pebcac/checustom:latest" -*-
 FROM fedora:39
 LABEL maintainer="Preston Davis pdavis@redhat.com"
 USER root
